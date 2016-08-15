@@ -4,9 +4,19 @@
 <title>Calendar Directive Challenge</title>
 <link rel="stylesheet" type="text/css" href="./main.css" />
 </head>
-<body>
+<body ng-controller="calendarController">
 
 <!-- your code for nav and calendar directive instance here -->
+<nav class="top-nav">
+	<select name="month">
+		<option ng-cloak ng-repeat="month in months">{{month}}</option>
+	</select>
+	<select name="year">
+		<option ng-cloak ng-repeat="year in yearRange" value="{{year}}">{{year}}</option>
+	</select>
+</nav>
+
+<div class="day"></div>
 
 <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
