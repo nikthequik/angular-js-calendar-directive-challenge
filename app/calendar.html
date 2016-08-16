@@ -1,0 +1,12 @@
+<nav class="top-nav">
+	<select name="month">
+		<option ng-cloak ng-repeat="month in months">{{month}}</option>
+	</select>
+	<select name="year">
+		<option ng-cloak ng-repeat="year in yearRange" value="{{year}}">{{year}}</option>
+	</select>
+</nav>
+
+<section class="days">
+	<div class="day"></div>
+</section>

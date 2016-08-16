@@ -6,17 +6,7 @@
 </head>
 <body ng-controller="calendarController">
 
-<!-- your code for nav and calendar directive instance here -->
-<nav class="top-nav">
-	<select name="month">
-		<option ng-cloak ng-repeat="month in months">{{month}}</option>
-	</select>
-	<select name="year">
-		<option ng-cloak ng-repeat="year in yearRange" value="{{year}}">{{year}}</option>
-	</select>
-</nav>
-
-<div class="day"></div>
+<calendar-directive></calendar-directive>
 
 <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
