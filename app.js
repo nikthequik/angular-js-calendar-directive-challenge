@@ -25,7 +25,10 @@ angular.module('calendarDemoApp', [])
 }])
 .directive('calendarDirective', function() {
 	return {
+		templateUrl: 'calendar.html',
 		scope: true,
-		
+		link: function (scope, el, attrs) {
+
+		}
 	}
 });

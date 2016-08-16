@@ -2,6 +2,7 @@
 html, body {
 	padding: 0;
 	margin: 0;
+	height: 100%;
 }
 
 .top-nav {
@@ -19,8 +20,14 @@ select {
 	height: 3vh;
 }
 
-day {
-	width: (100/7)vw;
-	height 10vh;
-	outline-color: red;
+.days {
+	height: calc(100% - 4vh);
+	outline: red solid 1px;
+	padding-top: 4vh;
+}
+
+.day {
+	width: calc(100%/7);
+	height: calc(100%/5);
+	outline: red solid 1px;
 }
