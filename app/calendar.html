@@ -1,12 +1,10 @@
 <nav class="top-nav">
-	<select name="month">
-		<option ng-cloak ng-repeat="month in months">{{month}}</option>
-	</select>
-	<select name="year">
-		<option ng-cloak ng-repeat="year in yearRange" value="{{year}}">{{year}}</option>
-	</select>
+
+	<select ng-change="changeDate()" ng-options="month as month.name for month in months" ng-model="selected.month"></select>
+	<select ng-change="changeDate()" ng-options="year for year in yearRange" ng-model="selected.year"></select>
+
 </nav>
 
-<section class="days">
-	<div class="day"></div>
+<section class="month">
+	<div ng-class="{'out-month': day.month !== selected.month.value}" class="day" ng-repeat="day in month.days">{{day.day}}</div>
 </section>
