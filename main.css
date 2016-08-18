@@ -20,14 +20,33 @@ select {
 	height: 3vh;
 }
 
-.days {
+.month {
 	height: calc(100% - 4vh);
+	width: 100%;
 	outline: red solid 1px;
 	padding-top: 4vh;
+	
+}
+
+.week {
+	height: calc(100%/5);
+	width: 100%;
+	outline: red solid 1px;
+	
 }
 
 .day {
-	width: calc(100%/7);
+	width: calc(100%/7.2);
 	height: calc(100%/5);
-	outline: red solid 1px;
+	box-sizing: border-box;
+	display: inline-block;
+	outline: black solid 1px;
+	margin: 3px 0 0 3px;
+	padding: 5px;
+	font-family: Garamond, cursive, sans-serif;
+	box-shadow: 2px -2px #333;
+}
+
+.out-month {
+	background-color: #ccc;
 }
