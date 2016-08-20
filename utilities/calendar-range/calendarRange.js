@@ -37,7 +37,7 @@ angular.module('calendarDemoApp', [])
 
       var lastDay = new Date(endDay);
       lastDay.setDate(lastDay.getDate() + (6 - endDay.getDay()));
-
+      //Create days
       var day = new Date(firstDay);
       var days = [];
       while(day <= lastDay) {
