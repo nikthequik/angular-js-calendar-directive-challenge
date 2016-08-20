@@ -68,10 +68,24 @@ angular.module('calendarDemoApp')
 	};
 
 	$scope.changeDate = function () {
-		console.log($scope.selected.month.value)
 		if ($scope.selected.month !== null && $scope.selected.year !== null) {
 			$scope.month = CalendarRange.getMonthlyRange(new Date($scope.selected.month.value + 1 + '/1/' + $scope.selected.year));
 		}
+	}
+
+	$scope.getInitialDate = function() {
+		var now = new Date();
+		$scope.month = CalendarRange.getMonthlyRange(now);
+		var foundMonth = -1;
+		angular.forEach( $scope.months, function(month) {
+			if (month.value === now.getMonth()) {
+				foundMonth = month;
+			}
+		});
+		
+		$scope.selected.month = foundMonth;
+		$scope.selected.year = now.getFullYear();
+		
 	}
 
 	while (weekInc) {
@@ -79,7 +93,7 @@ angular.module('calendarDemoApp')
 			currentWeek: false
 		});
 	}
-	console.log(new Date());
+	
 }])
 .directive('calendarDirective', function() {
 	return {
