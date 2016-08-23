@@ -12,5 +12,8 @@
 </nav>
 
 <section class="month">
-	<div ng-class="{'out-month': day.month !== selected.month.value}" class="day" ng-repeat="day in month.days">{{day.day}}</div>
+	<div ng-class="{'out-month': day.month !== selected.month.value}" class="day" ng-repeat="day in month.days" ng-mouseover="display = !display">
+		{{day.day}}
+		<!-- <div class="day-of-week" ng-show="display">{{day.dayOfWeek}}</div> -->
+	</div>
 </section>

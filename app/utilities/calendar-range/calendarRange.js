@@ -6,9 +6,18 @@ angular.module('calendarDemoApp', [])
     prepareDate : function(date) {
       date = new Date(date);
       var day = date.getDay();
+      var dayOfWeek = new Array(7);
+      dayOfWeek[0]=  "Sunday";
+      dayOfWeek[1] = "Monday";
+      dayOfWeek[2] = "Tuesday";
+      dayOfWeek[3] = "Wednesday";
+      dayOfWeek[4] = "Thursday";
+      dayOfWeek[5] = "Friday";
+      dayOfWeek[6] = "Saturday";
       return {
         date : date,
         weekday : day != 0 && day != 6,
+        dayOfWeek : dayOfWeek[day],
         day : date.getDate(),
         month : date.getMonth(),
         year : date.getFullYear()

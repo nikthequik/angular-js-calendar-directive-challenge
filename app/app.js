@@ -2,11 +2,10 @@ angular.module('calendarDemoApp')
 
 // your controller and directive code go here
 .controller('calendarController', ['$scope', 'CalendarRange', function($scope, CalendarRange) {
+	$scope.display = false;
 	$scope.yearRange = [];
-	$scope.week = [];
 	var yearInc = 0;
 	var yearStart = 1996;
-	var weekInc = 0;
 	while (yearInc <= 40) {
 		$scope.yearRange.push(yearInc + yearStart);
 		yearInc++;
@@ -67,6 +66,8 @@ angular.module('calendarDemoApp')
 		year: null,
 	};
 
+	
+
 	$scope.changeDate = function () {
 		if ($scope.selected.month !== null && $scope.selected.year !== null) {
 			$scope.month = CalendarRange.getMonthlyRange(new Date($scope.selected.month.value + 1 + '/1/' + $scope.selected.year));
@@ -88,10 +89,9 @@ angular.module('calendarDemoApp')
 		
 	}
 
-	while (weekInc) {
-		$scope.week.push({
-			currentWeek: false
-		});
+	$scope.displayDate = function () {
+		console.log($scope.display);
+		$scope.display = !$scope.display;
 	}
 	
 }])
@@ -99,8 +99,5 @@ angular.module('calendarDemoApp')
 	return {
 		templateUrl: 'calendar.html',
 		scope: true,
-		link: function (scope, el, attrs) {
-
-		}
 	}
 });

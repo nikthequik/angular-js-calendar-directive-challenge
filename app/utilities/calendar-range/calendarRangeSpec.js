@@ -1,5 +1,5 @@
 describe('CalendarRange', function() {
-
+  beforeEach('calendarDemoApp');
   beforeEach(function() {
     this.addMatchers({
       toMatchDate : function() {
@@ -32,6 +32,8 @@ describe('CalendarRange', function() {
   });
 
   it('should return the proper object for the given date', function() {
+    inject(function(CalendarRange) {
+    })
     var date = new Date('2000-11-12');
     var prepared = CalendarRange.prepareDate(date);
 
