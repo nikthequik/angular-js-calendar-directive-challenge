@@ -1,0 +1,16 @@
+<nav class="top-nav">
+
+	<div class="date-selector">
+		<select ng-change="changeDate()" ng-options="month as month.name for month in months" ng-model="selected.month"></select>
+		<select ng-change="changeDate()" ng-options="year for year in yearRange" ng-model="selected.year"></select>
+	</div>
+	<div class="date">
+		<h1>{{selected.month.name}}&nbsp{{selected.year}}</h1>
+	</div>
+
+
+</nav>
+
+<section class="month">
+	<div ng-class="{'out-month': day.month !== selected.month.value}" class="day" ng-repeat="day in month.days">{{day.day}}</div>
+</section>
