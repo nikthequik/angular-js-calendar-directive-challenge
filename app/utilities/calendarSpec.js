@@ -22,7 +22,7 @@ describe('calendarDirective', function() {
 		expect(element.find('select').length).toBe(2);
 	});
 
-	it('should contain more than 27 days', function() {
+	it('should contain one section', function() {
 		expect(element.find('section').length).toBe(1);
 	});
 
