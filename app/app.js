@@ -99,7 +99,7 @@ angular.module('calendarDemoApp')
 }])
 .directive('calendarDirective', function() {
 	return {
-		templateUrl: 'app/calendar.html',
+		templateUrl: 'calendar.html',
 		scope: true,
 	}
 });

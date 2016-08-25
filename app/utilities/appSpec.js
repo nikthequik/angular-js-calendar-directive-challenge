@@ -20,11 +20,30 @@ describe('calendarDemoApp', function() {
 	 	});
 
 	 	it('should test changeDate()', function() {
-	 		var s = scope;
 	 		
-	 		scope.selected.month = 'month';
-	 		expect(scope.changeDate()).toBe();
+	 		scope.selected.month = {
+				name: 'December',
+				value: 11
+			};
+			scope.selected.year = 2016;
+			scope.changeDate();
+	 		expect(scope.month.end).toEqual(new Date('Sat Dec 31 2016'));
 	 	});
+
+	 	it('should test getInitialDate()', function() {
+	 		var now = new Date();
+	 		scope.getInitialDate();
+	 		expect(scope.selected.year).toBe(now.getFullYear());
+	 		expect(scope.selected.month.value).toBe(now.getMonth());
+	 	});
+	 	
+		/*{
+			end: new Date('Sat Dec 31 2016 00:00:00 GMT-0700 (Mountain Standard Time)'),
+			first: new Date('Sun Nov 27 2016 00:00:00 GMT-0700 (Mountain Standard Time)'),
+			last: new Date('Sat Dec 31 2016 00:00:00 GMT-0700 (Mountain Standard Time)'),
+			start: new Date('Thu Dec 01 2016 00:00:00 GMT-0700 (Mountain Standard Time)')
+		}*/
+		
 	});
 
 

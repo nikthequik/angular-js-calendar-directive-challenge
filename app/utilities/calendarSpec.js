@@ -31,10 +31,4 @@ describe('calendarDirective', function() {
 		expect(element.children().length).toBe(2);
 	});
 
-	it('should have ', function() {
-		expect(element.children()[0].children).toBeDefined();
-	});
-
-
-
 });
