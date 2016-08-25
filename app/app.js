@@ -70,9 +70,11 @@ angular.module('calendarDemoApp')
 
 	$scope.changeDate = function () {
 		if ($scope.selected.month !== null && $scope.selected.year !== null) {
+			console.log($scope.selected.month);
 			$scope.month = CalendarRange.getMonthlyRange(new Date($scope.selected.month.value + 1 + '/1/' + $scope.selected.year));
 		}
-	}
+		console.log($scope.month, 'friendly');
+	};
 
 	$scope.getInitialDate = function() {
 		var now = new Date();
@@ -87,17 +89,17 @@ angular.module('calendarDemoApp')
 		$scope.selected.month = foundMonth;
 		$scope.selected.year = now.getFullYear();
 		
-	}
+	};
 
 	$scope.displayDate = function () {
 		console.log($scope.display);
 		$scope.display = !$scope.display;
-	}
+	};
 	
 }])
 .directive('calendarDirective', function() {
 	return {
-		templateUrl: 'calendar.html',
+		templateUrl: 'app/calendar.html',
 		scope: true,
 	}
 });

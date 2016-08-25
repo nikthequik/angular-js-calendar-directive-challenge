@@ -20,10 +20,21 @@ describe('calendarDirective', function() {
 
 	it('should contain two selects', function() {
 		expect(element.find('select').length).toBe(2);
+		console.log(element.children()[0].children[0]);
 	});
 
 	it('should contain one section', function() {
 		expect(element.find('section').length).toBe(1);
 	});
+
+	it('should have two children', function() {
+		expect(element.children().length).toBe(2);
+	});
+
+	it('should have ', function() {
+		expect(element.children()[0].children).toBeDefined();
+	});
+
+
 
 });
