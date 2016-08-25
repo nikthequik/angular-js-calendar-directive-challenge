@@ -19,10 +19,13 @@ describe('calendarDemoApp', function() {
 	 		expect(scope.months[5].name).toBe('June');
 	 	});
 
-	 	it('should contain an array of years', function() {
-	 		expect(scope.yearRange).toBeDefined();
-	 		expect(scope.yearRange.length).toBe(41);
+	 	it('should test changeDate()', function() {
+	 		var s = scope;
+	 		
+	 		scope.selected.month = 'month';
+	 		expect(scope.changeDate()).toBe();
 	 	});
 	});
+
 
 });
