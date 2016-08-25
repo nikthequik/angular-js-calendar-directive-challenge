@@ -36,6 +36,12 @@ describe('calendarDemoApp', function() {
 	 		expect(scope.selected.year).toBe(now.getFullYear());
 	 		expect(scope.selected.month.value).toBe(now.getMonth());
 	 	});
+
+	 	it('should test displayDate', function() {
+	 		scope.display = true;
+	 		scope.displayDate();
+	 		expect(scope.display).toBe(false);
+	 	});
 	 	
 		/*{
 			end: new Date('Sat Dec 31 2016 00:00:00 GMT-0700 (Mountain Standard Time)'),
